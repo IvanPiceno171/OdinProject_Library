@@ -1,0 +1,18 @@
+:root {
+    
+}
+
+body{
+    color: rgb(255, 255, 255);
+}
+
+.rendered{
+    display: flex;
+    
+}
+.renderedLi {
+    padding-left: 1em;
+    
+    list-style-type: none;
+    color: wheat;
+}
