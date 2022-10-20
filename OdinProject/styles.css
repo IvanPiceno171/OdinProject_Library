@@ -5,6 +5,9 @@
 body{
     color: rgb(255, 255, 255);
 }
+.inputDiv{
+    margin: 10px;
+}
 
 .formHTML {
     padding-left: 100px;
@@ -12,7 +15,15 @@ body{
 
 .rendered{
     display: flex;
-    
+    border: 3px solid black;
+    margin: 10px; 
+    width: 50%;  
+}
+ul{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
 }
 .renderedLi {
     padding-left: 1em;
@@ -20,9 +31,10 @@ body{
     color: wheat;
 }
 
-#addBooksBtn{
-    border: 5px solid black;
+#readBooksBtn{
+    /* border: 5px solid black; */
     font-size: larger;
+    width: 50%;
 
 }
 

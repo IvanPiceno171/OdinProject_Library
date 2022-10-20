@@ -1,7 +1,11 @@
 let html = document.querySelector(".container");
 const titleInput = document.querySelector("#title");
-const addBtn = document.getElementById("addBooksBtn");
+const showBooks = document.getElementById("readBooksBtn");
 const form = document.querySelector(".formHTML");
+const letterRegEx = /^[a-zA-Z ]{2,30}$/
+
+
+
 let myLibrary = [];
 
 // function Book() {
@@ -25,23 +29,25 @@ function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
 }
 
-// addBookToLibrary(book1);
-// addBookToLibrary(book2);
+addBookToLibrary(book1);
+addBookToLibrary(book2);
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let value = new Book(titleInput.value, form.author.value);
-    // console.log(value);
-    if(titleInput.value ){
-        alert('bad')
+    if(!titleInput.value.match(letterRegEx) && !form.author.value.match(letterRegEx)){
+        alert('book not entered')
     }
-    addBookToLibrary(value);
+    else{
+
+        let value = new Book(titleInput.value, form.author.value);
+        // console.log(value);
+        addBookToLibrary(value);
+    }
 });
 function addCards() {
+
     myLibrary.forEach((key) => {
-        // html.innerHTML = '';
-        let newHtml = "";
-        newHtml += `
+       html.innerHTML += `
                 <div class = "rendered">
                 <ul>
                 <li class='renderedLi'>${key.title}</li>
@@ -49,12 +55,10 @@ function addCards() {
                         <li class='renderedLi'>${key.year}</li>
                         </ul>
                         </div>  `;
-
-        html.innerHTML += newHtml;
     });
 }
 
-addBtn.addEventListener("click", () => {
+showBooks.addEventListener("click", () => {
     addCards()
 //    console.log('hello')
 });
