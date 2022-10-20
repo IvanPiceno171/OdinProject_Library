@@ -6,13 +6,28 @@ body{
     color: rgb(255, 255, 255);
 }
 
+.formHTML {
+    padding-left: 100px;
+}
+
 .rendered{
     display: flex;
     
 }
 .renderedLi {
     padding-left: 1em;
-    
     list-style-type: none;
     color: wheat;
+}
+
+#addBooksBtn{
+    border: 5px solid black;
+    font-size: larger;
+
+}
+
+.readBooksDiv{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
